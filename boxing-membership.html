@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Credit Card Validation</title>
+<link href="https://fonts.googleapis.com/css?family=Amethysta" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nova+Square" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+
+<style>
+body {
+background-color: #0E9385;
+background-image: url('http://i63.tinypic.com/slipsy.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+		background-position: left -28px bottom 10px;
+    background-size: 250px;
+}
+
+div {
+	background-color: #6CF1E3;
+	width: 600px;
+	padding: 10px 10px;
+}
+
+.restriction {
+color: red;
+}
+
+legend {
+	color: black;
+	font-family: 'Domine', serif;
+	font-size: 18px;
+	font-style: italic;
+}
+fieldset {
+width: 430px;
+background-color: #DBDBDB;
+	text-align: left;
+	padding: 10px 10px 10px 10px;
+}
+
+h3 {
+	color: #4b0000;
+	font-family: 'Amethysta', serif;
+	text-decoration: underline;
+}
+
+h4 {
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+p {
+	font-family: 'Amethysta', serif;
+	font-size: 14px;
+}
+form {
+	font-family: 'Tinos', serif;
+}
+
+#signup {
+		line-height: 0px;
+}
+
+#about {
+	width: 410px;
+}
+.btn {
+  background-color: black;
+  border: none;
+	border-radius: 4px;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 14px;
+	font-family: 'Domine', serif;
+  margin: -10px auto auto 75px ;
+  opacity: 1;
+  transition: 0.3s;
+	cursor: pointer;
+}
+.btn:hover {opacity: 0.8;
+}
+
+.btn2 {
+  background-color: #4b0000;
+  border: none;
+	border-radius: 18px;
+  color: white;
+  padding: 4px 12px;
+  text-align: center;
+  font-size: 14px;
+	font-family: 'Domine', serif;
+  opacity: 1;
+  transition: 0.3s;
+	cursor: pointer;
+}
+.btn2:hover {opacity: 0.8;
+}
+
+footer {
+	font-size: 14px;
+}
+</style>
+</head>
+<body>
+<center><img id="banner" src="http://i66.tinypic.com/121zfkl.jpg"></a>
+</br>	<img src="http://i68.tinypic.com/1zow487.gif"></a>
+<div id="info">
+	<img id="about" src="http://i63.tinypic.com/8zgrup.png"></a>
+	<h4 id="details" style="margin-top: 0px;"><img src="http://i65.tinypic.com/2hwmpzm.gif"></a>	30 day training with <em>world champions</em>, 50 min classes  </br>
+	<img src="http://i65.tinypic.com/2hwmpzm.gif"></a>Fundamental skills & techniques taught,  </br>
+	including partner, offensive, and defensive drills </br>
+	<img src="http://i65.tinypic.com/2hwmpzm.gif"></a>Headgear and boxing gloves provided ** </br>
+	<img src="http://i65.tinypic.com/2hwmpzm.gif"></a>Register NOW and get ready to show the world how to </br>
+	<span style="color:#e10303;">Fight Like A Girl.</span></br></br>
+** Membership dues: $49.00</h4>
+
+<h3>Payment Method: Credit Card</h3>
+<!-- Creating a form-->
+<form name= "ccValidation">
+<fieldset>
+<legend><strong>Credit Card Validation</strong></legend>
+
+<span>Name on Card:</span>
+<input class= "inputForm" type="text" name="name" id="fullname" placeholder="Full Name">
+<span class= "restriction" id= "check1"></span> <!-- validation statement will be shown here-->
+</br>
+<span>Credit Card Number:</span>
+<input class= "inputForm" type="text" id="ccNumber" placeholder="xxxxxxxxxxxxxxxx">
+<span class= "restriction" id= "check2"></span>
+</br>
+<!-- Drop down menu for Expiration month and year-->
+			<span> Expiration Month:</span>
+			<select name="month">
+				<option value="Jan">Jan</option>
+				<option value="Feb">Feb</option>
+				<option value="Mar">Mar</option>
+				<option value="Apr">Apr</option>
+				<option value="May">May</option>
+				<option value="Jun">Jun</option>
+				<option value="Jul">Jul</option>
+				<option value="Aug">Aug</option>
+				<option value="Sep">Sep</option>
+				<option value="Oct">Oct</option>
+				<option value="Nov">Nov</option>
+				<option value="Dec">Dec</option>
+			</select>
+
+			<span>Year:</span>
+			<select name="year">
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+				<option value="2024">2024</option>
+				<option value="2025">2025</option>
+				<option value="2026">2026</option>
+				<option value="2027">2027</option>
+				<option value="2028">2028</option>
+				<option value="2029">2029</option>
+				<option value="2030">2030</option>
+			</select>
+</br>
+<span>CVV:</span>
+<input class="inputForm" type="number" id="cvvNum" placeholder="xxx">
+<span class= "restriction" id= "check3"></span>
+</br>
+<span>Zip:</span>
+<input class= "inputForm" type="number" id="inputZip" placeholder="Enter Zip Code">
+<span class= "restriction" id= "check4"></span>
+</br></br>
+<!-- submission button -->
+<button class= "btn" type="button" onclick="finalValid()">Submit</button>
+</fieldset></form></div>
+<img src="http://i68.tinypic.com/1zow487.gif"></a>
+
+<h4 id="signup">Sign up for future updates:</h4>
+<form name="subscription" id="sub">
+<span>E-mail:</span>
+<input type="email" id="email" name="email" placeholder="Enter email address" pattern="/^[A-Za-z0-9_\-\.])+\@(A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/">
+<input type="submit" class= "btn2" value="Subscribe">
+ </form>
+</br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48368.47925582043!2d-73.82864115780134!3d40.73936641607474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c261c37b2a9eb5%3A0x3ecb2c8a33861014!2sHidden+Fist+Mixed+Martial+Arts+Academy!5e0!3m2!1sen!2sus!4v1522453829028" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+</br>
+<p id="address"><b>202-87 Rocky Hill Rd, </br>
+	Bayside, NY 11364 </br>
+	(718) 555-5555
+</b></p>
+<footer>© 2018 All Rights Reserved, Mixed Martial Arts</footer>
+</center>
+<script>
+function finalValid() { //this function includes all the other functions that will validate each section of the form
+checkname();
+validccNumber();
+checkcvv();
+checkZip();
+}
+
+function checkname() { //function to validate Name
+    var name, text;
+
+    // Get the value of the input field with id="fullname"
+    name = document.getElementById("fullname").value;
+
+    if (name == "" || parseInt(name)) { //rules out input that is empty or is a number instead of a letter
+        text = "Invalid input!";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("check1").innerHTML = text;
+}
+
+function validccNumber() { //function to validate credit card number
+    var ccNum, text;
+
+    ccNum = document.getElementById("ccNumber").value;
+
+/*these if statements will respectively rule out any input that is not a number, input that does not contain 16 digits,
+input that has a sum less than 16, input that represents one repeating digit, and input that is empty*/
+    if (isNaN(ccNum) || ccNum.length!= 16 || ccNum%2!=0 || ccNum <=1111111111111111 || ccNum%2222222222222222 ==0 || ccNum =="" ) {
+        text = "Invalid input!";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("check2").innerHTML = text;
+}
+
+function checkcvv() { //function to validate CVV
+    var cvv, text;
+
+    cvv = document.getElementById("cvvNum").value;
+
+    if (isNaN(cvv) || cvv.length!= 3 || cvv ==" " ) { //rules out input that is not a number, that does not contain 3 digits, or is empty
+        text = "Invalid input!";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("check3").innerHTML = text;
+}
+
+function checkZip() { //function to validate zip code
+    var zip, text;
+
+    zip = document.getElementById("inputZip").value;
+
+    if (isNaN(zip) || zip < 00501 || zip > 99950 || zip == " ") { //rules out input that is not a number, that is not between 00501 and 99950, or is empty
+        text = "Invalid input!";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("check4").innerHTML = text;
+}
+
+</script>
+</body>
+</html>
